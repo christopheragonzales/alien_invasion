@@ -1,0 +1,10 @@
+name: alien_invasion
+channels:
+  - defaults
+  - conda-forge
+dependencies:
+  - python
+  - ipykernel
+  - pip
+  - pip:
+      - pygame

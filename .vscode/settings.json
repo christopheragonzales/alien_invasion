@@ -1,0 +1,7 @@
+{
+    "jupyter.notebook.defaultKernel": "alien_invasion",
+    "jupyter.jupyterServer.kernelSpec": {
+        "display_name": "Alien Invasion Env",
+        "name": "alien_invasion"
+    }
+}
