@@ -110,4 +110,4 @@ Please ensure your code follows the style of the existing codebase and is well-d
 
 ## License
 
-This project is open-source and available under the MIT License. See the [LICENSE.txt](LICENSE.txt) file for more details.
+This project is open-source and available under the MIT License. See the [LICENSE.txt](https://github.com/christopheragonzales/alien_invasion/blob/main/license.txt) file for more details.
