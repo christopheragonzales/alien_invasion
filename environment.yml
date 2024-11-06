@@ -3,7 +3,8 @@ channels:
   - defaults
   - conda-forge
 dependencies:
-  - python
+  - python=3.9           # specify your Python version here
+  - jupyter
   - ipykernel
   - pip
   - pip:
