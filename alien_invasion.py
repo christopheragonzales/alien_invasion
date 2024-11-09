@@ -4,6 +4,7 @@ import pygame
 from settings import Settings
 from ship import Ship
 from bullet import Bullet
+from alien import Alien
 
 class AlienInvasion:
     """Overall Class to manage game assets and behavior"""
@@ -20,6 +21,7 @@ class AlienInvasion:
 
         self.ship = Ship(self)
         self.bullets = pygame.sprite.Group()
+        self.aliens = pygame.sprite.Group()
 
     def run_game(self):
         """Start the main loop for the game"""
@@ -29,12 +31,6 @@ class AlienInvasion:
             self.ship.update()
             self._update_bullets()
             self._update_screen()
-
-            # # Get rid of bullets that have disappeared
-            # for bullet in self.bullets.copy():
-            #     if bullet.rect.bottom <= 0:
-            #         self.bullets.remove(bullet)
-            # print(len(self.bullets))
 
             # Make the most recently drawn screen visible
             pygame.display.flip()
@@ -81,6 +77,7 @@ class AlienInvasion:
         self.ship.blitme()
         for bullet in self.bullets.sprites():
             bullet.draw_bullet()
+        self.aliens.draw(self.screen)
 
     def _update_bullets(self):
         """Update position of bullets and get rid of old bullets"""
@@ -91,6 +88,12 @@ class AlienInvasion:
         for bullet in self.bullets.copy():
             if bullet.rect.bottom <= 0:
                 self.bullets.remove(bullet)
+
+    def _create_fleet(self):
+        """Create the fleet of Aliens"""
+        # Make an Alien
+        alien = Alien(self)
+        self.aliens.add(alien)
 
 if __name__ == '__main__':
     # Make a game instance and run the game.
